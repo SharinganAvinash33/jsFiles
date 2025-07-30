@@ -22,11 +22,14 @@
     let bgchanger
     //changes color every 1 second
     document.querySelector('#start').addEventListener('click',function(){
+        if(!bgchanger){
         bgchanger=setInterval(changebg,1000)
+        }
     })
     //stops the generator
     document.querySelector('#stop').addEventListener('click',function(){
         clearInterval(bgchanger)
+        bgchanger=null
     })
 </script>
 </html>
