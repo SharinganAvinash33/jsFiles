@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Random bg color generator</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    //function that generates the random colors and applies it
+    const changebg=function(){
+        let rand1=Math.random()*255
+    let rand2=Math.random()*255
+    let rand3=Math.random()*255
+        document.body.style.backgroundColor=`rgb(${rand1},${rand2},${rand3})`
+    }
+    //made this outside the event listener so that it can be accessed by the other click
+    let bgchanger
+    //changes color every 1 second
+    document.querySelector('#start').addEventListener('click',function(){
+        bgchanger=setInterval(changebg,1000)
+    })
+    //stops the generator
+    document.querySelector('#stop').addEventListener('click',function(){
+        clearInterval(bgchanger)
+    })
+</script>
+</html>
